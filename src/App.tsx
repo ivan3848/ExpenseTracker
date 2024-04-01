@@ -57,13 +57,16 @@ function App() {
 			<div className="container border rounded  p-4 my-3">
 				<Form onSubmit={handleSubmit}></Form>
 			</div>
-			<div className="container border rounded  p-4 my-3">
-				<Grid
-					data={expenses.updated}
-					onDelete={handleDelete}
-					onFilter={handleFilter}
-				></Grid>
-			</div>
+			
+			{expenses.current.length && (
+				<div className="container border rounded  p-4 my-3">
+					<Grid
+						data={expenses.updated}
+						onDelete={handleDelete}
+						onFilter={handleFilter}
+					></Grid>
+				</div>
+			)}
 		</>
 	);
 }

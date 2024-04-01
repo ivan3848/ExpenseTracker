@@ -31,7 +31,7 @@ const Grid = ({ data, onDelete, onFilter }: Props) => {
 						.map((item) => (
 							<li
 								key={item}
-								className="dropdown-item"
+								className="dropdown-item pointer"
 								onClick={() => {
 									setSelectedFilter(item);
 									onFilter(item);
@@ -70,7 +70,9 @@ const Grid = ({ data, onDelete, onFilter }: Props) => {
 					))}
 					<tr key={"total"}>
 						<th>Total</th>
-						<th> ${data.reduce((accumulator, currentValue) => {
+						<th>
+							$
+							{data.reduce((accumulator, currentValue) => {
 								return accumulator + currentValue.amount;
 							}, 0)}
 						</th>
